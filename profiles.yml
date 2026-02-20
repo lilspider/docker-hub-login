@@ -1,4 +1,4 @@
-etl_dbt:
+etl:
   target: dev
   outputs:
     dev:

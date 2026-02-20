@@ -1,13 +1,7 @@
-name: 'etl_dbt'
+name: 'etl'
 version: '1.0.0'
-profile: 'etl_dbt'
-
-model-paths: ["models"]
-analysis-paths: ["analysis"]
-test-paths: ["tests"]
-seed-paths: ["data"]
-macro-paths: ["macros"]
+profile: 'etl'
 
 models:
-  etl_dbt:
+  etl:
     +materialized: table
