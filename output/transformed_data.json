@@ -1,7 +1,7 @@
 {
   "metadata": {
     "total_records": 10,
-    "processed_at": "2026-02-20T14:31:43.983369",
+    "processed_at": "2026-02-20T14:37:43.651492",
     "columns": [
       "id",
       "name",
@@ -22,7 +22,7 @@
       "city": "New York",
       "salary": 75000,
       "salary_category": "Medium",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 2,
@@ -32,7 +32,7 @@
       "city": "Los Angeles",
       "salary": 82000,
       "salary_category": "High",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 3,
@@ -42,7 +42,7 @@
       "city": "Chicago",
       "salary": 68000,
       "salary_category": "Medium",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 4,
@@ -52,7 +52,7 @@
       "city": "Houston",
       "salary": 54000,
       "salary_category": "Low",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 5,
@@ -62,7 +62,7 @@
       "city": "Phoenix",
       "salary": 91000,
       "salary_category": "High",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 6,
@@ -72,7 +72,7 @@
       "city": "Philadelphia",
       "salary": 73000,
       "salary_category": "Medium",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 7,
@@ -82,7 +82,7 @@
       "city": "San Antonio",
       "salary": 89000,
       "salary_category": "High",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 8,
@@ -92,7 +92,7 @@
       "city": "San Diego",
       "salary": 67000,
       "salary_category": "Medium",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 9,
@@ -102,7 +102,7 @@
       "city": "Dallas",
       "salary": 71000,
       "salary_category": "Medium",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     },
     {
       "id": 10,
@@ -112,7 +112,7 @@
       "city": "San Jose",
       "salary": 95000,
       "salary_category": "High",
-      "processed_at": "2026-02-20 14:31:43"
+      "processed_at": "2026-02-20 14:37:43"
     }
   ]
 }

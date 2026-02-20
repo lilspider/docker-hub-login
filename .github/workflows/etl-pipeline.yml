@@ -28,6 +28,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run tests
+        run: pytest
+
       - name: Run ETL Pipeline
         run: python etl.py
 

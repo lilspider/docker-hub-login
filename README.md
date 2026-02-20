@@ -69,7 +69,43 @@ The workflow triggers on:
    python etl.py
    ```
 
-3. Check the output in the `output/` directory
+3. Run tests:
+   ```bash
+   pytest
+   # or for verbose output
+   pytest -v
+   ```
+
+4. Check the output in the `output/` directory
+
+## 🧪 Testing
+
+The project includes comprehensive pytest tests covering:
+
+- **Unit Tests**: Individual function testing
+  - `test_extract()` - Data extraction validation
+  - `test_transform()` - Data transformation logic
+  - `test_load_csv()` - CSV output verification
+  - `test_load_json()` - JSON output verification
+
+- **Integration Tests**: End-to-end pipeline testing
+  - `test_full_pipeline_integration()` - Complete ETL flow
+  - `test_data_integrity()` - Data preservation through pipeline
+
+- **Edge Case Tests**: Boundary conditions
+  - `test_edge_cases()` - Empty DataFrame handling
+  - `test_salary_categorization()` - Salary boundary testing
+  - `test_age_grouping()` - Age boundary testing
+
+**Test Coverage:**
+- ✅ Data extraction from CSV
+- ✅ Data transformation logic
+- ✅ Salary categorization (High/Medium/Low)
+- ✅ Age grouping (Senior/Mid/Junior)
+- ✅ Name formatting (title case)
+- ✅ Output file generation (CSV & JSON)
+- ✅ Data integrity preservation
+- ✅ Error handling and edge cases
 
 ## 📊 Sample Output
 
