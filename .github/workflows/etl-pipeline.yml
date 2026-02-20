@@ -28,8 +28,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install DBT
+        run: |
+          pip install dbt-core dbt-duckdb
+
       - name: Run tests
         run: pytest
+
+      - name: Run DBT
+        run: dbt run
+
+      - name: Run DBT tests
+        run: dbt test
 
       - name: Run ETL Pipeline
         run: python etl.py

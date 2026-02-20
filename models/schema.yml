@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: employees
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: salary
+        tests:
+          - dbt_utils.at_least_one
