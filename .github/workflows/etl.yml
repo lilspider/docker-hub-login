@@ -26,6 +26,9 @@ jobs:
       - name: Run DBT
         run: dbt run
 
+      - name: Run tests
+        run: pytest
+
       - name: Run ETL Pipeline
         run: python etl.py
 
