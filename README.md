@@ -12,40 +12,81 @@ This repository demonstrates how to log into Docker Hub using GitHub Actions and
 5. Give it a name (e.g., "github-actions")
 6. Copy the generated token
 
-### 2. Add GitHub Secrets
-1. Go to your GitHub repository
-2. Click **Settings** tab
-3. Go to **Secrets and variables** → **Actions**
-4. Click **New repository secret**
-5. Add these secrets:
-   - `DOCKERHUB_USERNAME`: Your Docker Hub username
-   - `DOCKERHUB_TOKEN`: The access token you created
+## 📁 Project Structure
 
-## 🚀 How It Works
+```
+├── data/
+│   └── input.csv          # Source data file
+├── output/                # Generated output files
+│   ├── transformed_data.csv
+│   └── transformed_data.json
+├── etl.py                 # Main ETL script
+├── requirements.txt       # Python dependencies
+└── .github/workflows/
+    └── etl-pipeline.yml   # GitHub Actions workflow
+```
 
-The workflow:
-1. Runs on Ubuntu latest
-2. Logs into Docker Hub using your secrets
-3. Verifies the login was successful
-4. Shows your Docker username
+## 🔄 ETL Process
 
-## 📋 Workflow Triggers
+### Extract
+- Reads employee data from `data/input.csv`
+- Loads 10 sample records with employee information
 
-- Push to main/master branch
-- Pull requests to main/master branch
-- Manual dispatch (run manually from Actions tab)
+### Transform
+- Adds `salary_category` (High/Medium/Low based on salary)
+- Adds `age_group` (Senior/Mid/Junior based on age)
+- Formats names to title case
+- Adds processing timestamp
 
-## 🔍 What to Expect
+### Load
+- Saves transformed data to `output/transformed_data.csv`
+- Saves structured data with metadata to `output/transformed_data.json`
 
-When the workflow runs, you'll see:
-- Docker login process
-- Docker system information
-- Confirmation of successful login with your username
+## 🤖 GitHub Actions
 
-## 📝 Next Steps
+The workflow triggers on:
+- **Push** to master branch
+- **Pull requests** to master branch
+- **Manual dispatch** (run manually)
+- **Daily schedule** at 2:00 AM UTC
 
-Once login is working, you can extend this to:
-- Build Docker images
-- Push images to Docker Hub
-- Deploy containers
-- Run multi-stage builds
+**Features:**
+- Runs on Ubuntu latest
+- Uses Python 3.11
+- Installs dependencies automatically
+- Uploads output artifacts
+- Displays execution summary
+
+## 🛠️ Local Development
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Run the ETL pipeline:
+   ```bash
+   python etl.py
+   ```
+
+3. Check the output in the `output/` directory
+
+## 📊 Sample Output
+
+The pipeline generates:
+- **CSV**: Clean, transformed data ready for analysis
+- **JSON**: Structured data with metadata including:
+  - Total record count
+  - Processing timestamp
+  - Column information
+  - All transformed records
+
+## 🔧 Next Steps
+
+Extend this ETL pipeline by:
+- Adding data validation steps
+- Connecting to real data sources (databases, APIs)
+- Implementing error handling and logging
+- Adding data quality checks
+- Connecting to cloud storage (S3, GCS)
+- Adding notification systems

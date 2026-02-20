@@ -1,0 +1,11 @@
+id,name,age,age_group,city,salary,salary_category,processed_at
+1,John Doe,28,Junior,New York,75000,Medium,2026-02-20 14:31:43
+2,Jane Smith,34,Mid,Los Angeles,82000,High,2026-02-20 14:31:43
+3,Bob Johnson,45,Senior,Chicago,68000,Medium,2026-02-20 14:31:43
+4,Alice Brown,23,Junior,Houston,54000,Low,2026-02-20 14:31:43
+5,Charlie Wilson,38,Mid,Phoenix,91000,High,2026-02-20 14:31:43
+6,Diana Lee,29,Junior,Philadelphia,73000,Medium,2026-02-20 14:31:43
+7,Eve Davis,52,Senior,San Antonio,89000,High,2026-02-20 14:31:43
+8,Frank Miller,31,Mid,San Diego,67000,Medium,2026-02-20 14:31:43
+9,Grace Taylor,27,Junior,Dallas,71000,Medium,2026-02-20 14:31:43
+10,Henry Clark,41,Senior,San Jose,95000,High,2026-02-20 14:31:43

@@ -1,0 +1,52 @@
+name: ETL Pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+  schedule:
+    # Run daily at 2:00 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  etl:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run ETL Pipeline
+        run: python etl.py
+
+      - name: Upload output artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: etl-output
+          path: output/
+          retention-days: 30
+
+      - name: Display summary
+        run: |
+          echo "## 📊 ETL Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Status**: Completed successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📁 Output Files:" >> $GITHUB_STEP_SUMMARY
+          echo "- \`transformed_data.csv\` - CSV format" >> $GITHUB_STEP_SUMMARY
+          echo "- \`transformed_data.json\` - JSON format with metadata" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Sample Data:" >> $GITHUB_STEP_SUMMARY
+          head -n 5 output/transformed_data.csv >> $GITHUB_STEP_SUMMARY
